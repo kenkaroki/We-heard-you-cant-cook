@@ -1,6 +1,10 @@
 import pymongo
 import os
 
+#for test purpouses ##
+from dotenv import load_dotenv
+load_dotenv()
+
 uri = os.getenv("MongoDbURI")
 global client
 global secondarydb
