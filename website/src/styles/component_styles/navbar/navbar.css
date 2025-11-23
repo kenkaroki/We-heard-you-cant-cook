@@ -1,0 +1,36 @@
+/* Remove any body background styles from navbar CSS */
+/* Body background should be controlled by individual pages */
+
+nav {
+    background-color: rgb(203, 169, 107);
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+}
+
+/* Scope styles to only links INSIDE the nav */
+nav a {
+    margin-right: 5vh;
+    font-size: x-large;
+    color: #482309;
+    padding: 10px;
+    transition: background-color 0.3s, color 0.3s;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    /* ONLY affects the link element itself */
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    color: white !important;
+}
+
+/* Ensure body background stays fixed */
+body {
+    background-color: inherit;
+    position: relative;
+}

@@ -1,0 +1,489 @@
+/* 🎨 General Page and Layout Styling */
+:root {
+	--primary-color: #8b6f2f;
+	--primary-hover: #8b6f2f;
+	--background-color: #8b6f2f;
+	--card-background: #ffffff;
+	--text-color: #333;
+	--border-color: #d1d5db;
+	--shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+:global(body) {
+	background-color: #8b6f2f;
+	font-family:
+		'Inter',
+		-apple-system,
+		BlinkMacSystemFont,
+		'Segoe UI',
+		sans-serif;
+	margin: 0;
+	overflow-x: hidden;
+}
+body {
+	background-color: #8b6f2f;
+}
+
+section{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: column;
+}
+
+.signup_switch{
+	margin-top: 05vh;
+	color: #fdfcfa;
+
+}
+
+
+.login {
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	position: relative;
+	overflow: hidden;
+}
+
+/* 🖼️ Login Card Container Styling */
+.login-card {
+	background-color: var(--card-background);
+	padding: 40px;
+	border-radius: 20px;
+	box-shadow: 0 20px 60px var(--shadow-color);
+	width: 100%;
+	max-width: 400px;
+	text-align: center;
+	z-index: 10;
+	position: relative;
+}
+
+h1 {
+	color: var(--text-color);
+	margin-bottom: 30px;
+	font-size: 2em;
+	font-weight: 600;
+}
+
+/* 📝 Form Styling */
+#login-form {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+/* 👁️ Password Input Group Styling (Browser Fixes) */
+.password-input-group {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+}
+
+input[type='password']::-ms-reveal {
+	display: none;
+	width: 0;
+	height: 0;
+}
+
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-results-button,
+input[type='search']::-webkit-search-results-decoration {
+	-webkit-appearance: none;
+	display: none;
+}
+input[type='text']::-ms-clear,
+input[type='password']::-ms-clear {
+	display: none;
+}
+
+input[type='text'],
+input[type='password'] {
+	width: 100%;
+	padding: 12px 15px;
+	border: 2px solid var(--border-color);
+	border-radius: 8px;
+	box-sizing: border-box;
+	font-size: 1em;
+	color: var(--text-color);
+	transition:
+		border-color 0.3s,
+		box-shadow 0.3s;
+}
+
+.password-input-group input {
+	padding-right: 50px;
+}
+
+input[type='text']:focus,
+input[type='password']:focus {
+	border-color: var(--primary-color);
+	outline: none;
+	box-shadow: 0 0 0 3px rgba(139, 111, 47, 0.25);
+}
+
+.toggle-visibility-button {
+	position: absolute;
+	top: 50%;
+	right: 10px;
+	transform: translateY(-50%);
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 5px;
+	color: #6c757d;
+	transition: color 0.2s;
+	z-index: 10;
+	font-size: 1.2em;
+}
+
+
+.toggle-visibility-button:hover {
+	color: var(--primary-color);
+}
+
+/* 👆 Button Styling (Submit) */
+button[type='submit'] {
+	background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-hover) 100%);
+	color: white;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+	font-size: 1.1em;
+	font-weight: bold;
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	margin-top: 10px;
+	box-shadow: 0 4px 12px rgba(139, 111, 47, 0.3);
+}
+
+button[type='submit']:hover {
+	background: linear-gradient(135deg, #6d561f 0%, #5a4819 100%);
+	transform: translateY(-2px);
+	box-shadow: 0 6px 20px rgba(139, 111, 47, 0.4);
+}
+
+button[type='submit']:active {
+	transform: scale(0.99);
+}
+
+.email {
+	margin-bottom: 10px;
+}
+
+
+/* 🥕🥬 CHARACTER STYLING */
+.food-item {
+	position: absolute;
+	transition: all 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+	z-index: 12;
+	will-change: transform;
+}
+
+.food-item.carrot {
+	top: 50%;
+	left: 5%;
+	transform: translateY(-50%);
+}
+
+.food-item.cabbage {
+	top: 50%;
+	right: 5%;
+	transform: translateY(-50%);
+}
+
+.emoji-body {
+	font-size: 6rem;
+	line-height: 1;
+	display: block;
+	filter: drop-shadow(2px 2px 8px rgba(0, 0, 0, 0.3));
+}
+
+.eye-container {
+	position: absolute;
+	top: 25%;
+	width: 70%;
+	display: flex;
+	justify-content: space-around;
+	pointer-events: none;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.eye {
+	width: 20px;
+	height: 20px;
+	background: #ffffff;
+	border: 3px solid #333;
+	border-radius: 50%;
+	position: relative;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) inset;
+	transition: all 0.3s ease;
+}
+
+/* Closed eyes when password is shown */
+.eye.closed {
+	height: 3px;
+	border-radius: 0;
+	background: #333;
+	border: none;
+}
+
+.pupil {
+	width: 8px;
+	height: 8px;
+	background: #000000;
+	border-radius: 50%;
+	position: absolute;
+	transition:
+		transform 0.1s ease-out,
+		opacity 0.3s ease;
+}
+
+.eye.closed .pupil {
+	opacity: 0;
+}
+
+/* 🥕 SNEAKY ICON BASE */
+.sneaky-icon {
+	position: absolute;
+	z-index: 20;
+	/* Base positioning relative to the carrot */
+	top: 40%;
+	left: 40%;
+}
+
+/* 🔭 TELESCOPE STYLES (SVG) */
+.sneaky-icon.telescope {
+	width: 100px; /* Base size of the container for the SVG */
+	height: 100px;
+	transform-origin: 20% 80%; /* Origin is the carrot's body (20, 80 in SVG viewport) */
+	animation: telescopeZoom var(--telescope-duration, 1000ms) cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.telescope-svg {
+	width: 100%;
+	height: 100%;
+	overflow: visible; /* Allows the line to stretch outside the viewBox */
+}
+
+.telescope-stretch-line {
+	/* Set the stroke dash array to the length of the diagonal (approx 141) */
+	stroke-dasharray: 141;
+	/* Initially hide the line */
+	stroke-dashoffset: 341;
+	/* Animation time is half the total telescope time for the 'stretch' */
+	animation: stretchLine var(--telescope-duration, 1000ms) ease-in-out forwards;
+}
+
+@keyframes telescopeZoom {
+	0% {
+		opacity: 0;
+		transform: scale(0.1) rotate(10deg);
+	}
+	10% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 1;
+		/* Rotate to point towards the login card */
+		transform: scale(1) rotate(0deg);
+	}
+}
+
+/* Keyframes for the line to stretch up to the password field */
+@keyframes stretchLine {
+	0% {
+		stroke-dashoffset: 141; /* Fully hidden */
+	}
+	100% {
+		stroke-dashoffset: 210; /* Fully visible/stretched */
+	}
+}
+
+/* ✍️ NOTEBOOK STYLES */
+.sneaky-icon.notebook {
+	background-color: rgb(245, 212, 152);
+	font-size: 3rem; /* Larger than default */
+	top: 55%;
+	left: 20%;
+	opacity: 100; /* Ensure base state is visible */
+	transform: rotate(-10deg); /* Set base rotation */
+	/* Using forwards ensures it stays at 100% state */
+	animation: notebookWrite var(--notebook-duration, 1500ms) ease-in-out forwards;
+	border-radius: 10px;
+}
+
+/* --- MODIFIED KEYFRAMES FOR WRITING MOTION ONLY --- */
+@keyframes notebookWrite {
+	0% {
+		opacity: 1;
+		transform: translate(0, 0) scale(1) rotate(-10deg);
+	}
+	50% {
+		/* Simulates writing motion with a little shake/movement */
+		opacity: 1;
+		transform: translate(5px, -5px) scale(1.05) rotate(-12deg);
+	}
+	100% {
+		opacity: 1;
+		transform: translate(0, 0) scale(1) rotate(-10deg);
+	}
+}
+
+/* Dialogue bubble for characters (Unchanged) */
+.character-dialogue {
+	position: absolute;
+	top: -70px;
+	left: 50%;
+	transform: translateX(-50%);
+	background: #fff;
+	border: 3px solid #333;
+	border-radius: 18px;
+	padding: 10px 15px;
+	font-size: 0.9rem;
+	font-weight: 600;
+	white-space: nowrap;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+	opacity: 0;
+	transition:
+		opacity 0.3s ease,
+		transform 0.3s ease;
+	z-index: 15;
+}
+
+.character-dialogue.visible {
+	opacity: 1;
+	animation: bounce 0.6s ease;
+}
+
+.character-dialogue::after {
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-left: 12px solid transparent;
+	border-right: 12px solid transparent;
+	border-top: 15px solid #fff;
+	bottom: -13px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.character-dialogue::before {
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	border-top: 18px solid #333;
+	bottom: -16px;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: -1;
+}
+
+@keyframes bounce {
+	0%,
+	100% {
+		transform: translateX(-50%) translateY(0);
+	}
+	50% {
+		transform: translateX(-50%) translateY(-10px);
+	}
+}
+
+/* 📱 Tablet RESPONSIVENESS (Adjusted sneaky icons) */
+@media (max-width: 1024px) {
+	.login {
+		flex-direction: column;
+		justify-content: flex-start;
+		padding-top: 60px;
+	}
+	.login-card {
+		padding: 35px 30px;
+		max-width: 90%;
+		margin-top: 280px;
+	}
+	/* Character positions */
+	.food-item.carrot {
+		top: 250px;
+		left: 10%;
+		transform: translateY(0) translateX(0);
+	}
+	.food-item.cabbage {
+		top: 300px;
+		right: 10%;
+		transform: translateY(0) translateX(0);
+	}
+	.character-dialogue {
+		top: -60px;
+	}
+	@keyframes telescopeZoom {
+		0% {
+			opacity: 0;
+			transform: scale(0.1) rotate(10deg);
+		}
+		10% {
+			opacity: 1;
+		}
+		100% {
+			opacity: 1;
+			/* Rotate to point towards the login card */
+			transform: scale(1) rotate(60deg);
+		}
+	}
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 480px) {
+	.login {
+		padding-top: 40px;
+	}
+	.login-card {
+		padding: 30px 25px;
+		max-width: 90%;
+		margin-top: 260px;
+	}
+
+	/* Character positions */
+	.food-item.carrot {
+		top: 200px;
+		left: 8%;
+	}
+	.food-item.cabbage {
+		top: 150px;
+		right: 15%;
+	}
+	.character-dialogue {
+		top: -55px;
+	}
+
+	/* Adjust sneaky icons for mobile */
+	.sneaky-icon.telescope {
+		width: 80px;
+		height: 80px;
+		top: 30%;
+	}
+	.sneaky-icon.notebook {
+		font-size: 2.5rem;
+		top: 20%;
+	}
+}
+
+/* Accessibility - Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+	* {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+	}
+}
