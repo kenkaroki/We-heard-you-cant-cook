@@ -15,5 +15,3 @@ def health():
         "status":"good all services are up. I hope..."
     })
 
-if __name__ == "__main__":
-    app.run(port=5000)
